@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8426F44135DF04E0013B810 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8426F43135DF04E0013B810 /* Cocoa.framework */; };
+		F8426F4E135DF04E0013B810 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8426F4C135DF04E0013B810 /* InfoPlist.strings */; };
+		F8426F51135DF04E0013B810 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8426F50135DF04E0013B810 /* main.m */; };
+		F8426F54135DF04E0013B810 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F8426F52135DF04E0013B810 /* Credits.rtf */; };
+		F8426F57135DF04E0013B810 /* SWFDropAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8426F56135DF04E0013B810 /* SWFDropAppDelegate.m */; };
+		F8426F5A135DF04E0013B810 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8426F58135DF04E0013B810 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F8426F3F135DF04E0013B810 /* SWFDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWFDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8426F43135DF04E0013B810 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F8426F46135DF04E0013B810 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		F8426F47135DF04E0013B810 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F8426F48135DF04E0013B810 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F8426F4B135DF04E0013B810 /* SWFDrop-Info.plist */ = {isa = PBXFileReference; path = "SWFDrop-Info.plist"; sourceTree = "<group>"; };
+		F8426F4D135DF04E0013B810 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F8426F4F135DF04E0013B810 /* SWFDrop-Prefix.pch */ = {isa = PBXFileReference; path = "SWFDrop-Prefix.pch"; sourceTree = "<group>"; };
+		F8426F50135DF04E0013B810 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F8426F53135DF04E0013B810 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		F8426F55135DF04E0013B810 /* SWFDropAppDelegate.h */ = {isa = PBXFileReference; path = SWFDropAppDelegate.h; sourceTree = "<group>"; };
+		F8426F56135DF04E0013B810 /* SWFDropAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWFDropAppDelegate.m; sourceTree = "<group>"; };
+		F8426F59135DF04E0013B810 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8426F3C135DF04E0013B810 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8426F44135DF04E0013B810 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8426F34135DF04E0013B810 = {
+			isa = PBXGroup;
+			children = (
+				F8426F49135DF04E0013B810 /* SWFDrop */,
+				F8426F42135DF04E0013B810 /* Frameworks */,
+				F8426F40135DF04E0013B810 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8426F40135DF04E0013B810 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8426F3F135DF04E0013B810 /* SWFDrop.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8426F42135DF04E0013B810 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8426F43135DF04E0013B810 /* Cocoa.framework */,
+				F8426F45135DF04E0013B810 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8426F45135DF04E0013B810 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8426F46135DF04E0013B810 /* AppKit.framework */,
+				F8426F47135DF04E0013B810 /* CoreData.framework */,
+				F8426F48135DF04E0013B810 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		F8426F49135DF04E0013B810 /* SWFDrop */ = {
+			isa = PBXGroup;
+			children = (
+				F8426F55135DF04E0013B810 /* SWFDropAppDelegate.h */,
+				F8426F56135DF04E0013B810 /* SWFDropAppDelegate.m */,
+				F8426F58135DF04E0013B810 /* MainMenu.xib */,
+				F8426F4A135DF04E0013B810 /* Supporting Files */,
+			);
+			path = SWFDrop;
+			sourceTree = "<group>";
+		};
+		F8426F4A135DF04E0013B810 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8426F4B135DF04E0013B810 /* SWFDrop-Info.plist */,
+				F8426F4C135DF04E0013B810 /* InfoPlist.strings */,
+				F8426F4F135DF04E0013B810 /* SWFDrop-Prefix.pch */,
+				F8426F50135DF04E0013B810 /* main.m */,
+				F8426F52135DF04E0013B810 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8426F3E135DF04E0013B810 /* SWFDrop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8426F5D135DF04E0013B810 /* Build configuration list for PBXNativeTarget "SWFDrop" */;
+			buildPhases = (
+				F8426F3B135DF04E0013B810 /* Sources */,
+				F8426F3C135DF04E0013B810 /* Frameworks */,
+				F8426F3D135DF04E0013B810 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SWFDrop;
+			productName = SWFDrop;
+			productReference = F8426F3F135DF04E0013B810 /* SWFDrop.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8426F36135DF04E0013B810 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = F8426F39135DF04E0013B810 /* Build configuration list for PBXProject "SWFDrop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F8426F34135DF04E0013B810;
+			productRefGroup = F8426F40135DF04E0013B810 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8426F3E135DF04E0013B810 /* SWFDrop */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8426F3D135DF04E0013B810 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8426F4E135DF04E0013B810 /* InfoPlist.strings in Resources */,
+				F8426F54135DF04E0013B810 /* Credits.rtf in Resources */,
+				F8426F5A135DF04E0013B810 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8426F3B135DF04E0013B810 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8426F51135DF04E0013B810 /* main.m in Sources */,
+				F8426F57135DF04E0013B810 /* SWFDropAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F8426F4C135DF04E0013B810 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8426F4D135DF04E0013B810 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F8426F52135DF04E0013B810 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8426F53135DF04E0013B810 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		F8426F58135DF04E0013B810 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8426F59135DF04E0013B810 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8426F5B135DF04E0013B810 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F8426F5C135DF04E0013B810 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F8426F5E135DF04E0013B810 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SWFDrop/SWFDrop-Prefix.pch";
+				INFOPLIST_FILE = "SWFDrop/SWFDrop-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F8426F5F135DF04E0013B810 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SWFDrop/SWFDrop-Prefix.pch";
+				INFOPLIST_FILE = "SWFDrop/SWFDrop-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8426F39135DF04E0013B810 /* Build configuration list for PBXProject "SWFDrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8426F5B135DF04E0013B810 /* Debug */,
+				F8426F5C135DF04E0013B810 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8426F5D135DF04E0013B810 /* Build configuration list for PBXNativeTarget "SWFDrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8426F5E135DF04E0013B810 /* Debug */,
+				F8426F5F135DF04E0013B810 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8426F36135DF04E0013B810 /* Project object */;
+}
