@@ -21,12 +21,12 @@
 		F8426F46135DF04E0013B810 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		F8426F47135DF04E0013B810 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F8426F48135DF04E0013B810 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		F8426F4B135DF04E0013B810 /* SWFDrop-Info.plist */ = {isa = PBXFileReference; path = "SWFDrop-Info.plist"; sourceTree = "<group>"; };
+		F8426F4B135DF04E0013B810 /* SWFDrop-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SWFDrop-Info.plist"; sourceTree = "<group>"; };
 		F8426F4D135DF04E0013B810 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		F8426F4F135DF04E0013B810 /* SWFDrop-Prefix.pch */ = {isa = PBXFileReference; path = "SWFDrop-Prefix.pch"; sourceTree = "<group>"; };
+		F8426F4F135DF04E0013B810 /* SWFDrop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SWFDrop-Prefix.pch"; sourceTree = "<group>"; };
 		F8426F50135DF04E0013B810 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F8426F53135DF04E0013B810 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		F8426F55135DF04E0013B810 /* SWFDropAppDelegate.h */ = {isa = PBXFileReference; path = SWFDropAppDelegate.h; sourceTree = "<group>"; };
+		F8426F55135DF04E0013B810 /* SWFDropAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWFDropAppDelegate.h; sourceTree = "<group>"; };
 		F8426F56135DF04E0013B810 /* SWFDropAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWFDropAppDelegate.m; sourceTree = "<group>"; };
 		F8426F59135DF04E0013B810 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -277,6 +277,7 @@
 				F8426F5F135DF04E0013B810 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

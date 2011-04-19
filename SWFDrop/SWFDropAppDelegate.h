@@ -13,6 +13,12 @@
 	NSWindow *window;
 }
 
+-(IBAction) generate:(id)sender;
+
 @property (assign) IBOutlet NSWindow *window;
+@property (nonatomic, retain) NSString *swfFile;
+@property (nonatomic, retain) IBOutlet NSTextField *landNameTextField;
+@property (nonatomic, retain) IBOutlet NSTextField *fileTextField;
+@property (nonatomic, retain) IBOutlet NSImageView *fileDropView;
 
 @end

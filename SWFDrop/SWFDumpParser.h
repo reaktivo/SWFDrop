@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface SWFDumpParser : XMLParser {
+@interface SWFDumpParser : NSXMLParser {
 @private
     
 }

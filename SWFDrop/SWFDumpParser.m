@@ -11,18 +11,16 @@
 
 @implementation SWFDumpParser
 
-- (id)init
-{
+- (id)init {
     self = [super init];
     if (self) {
-        // Initialization code here.
+        self.delegate = self;
     }
     
     return self;
 }
 
-- (void)dealloc
-{
+- (void)dealloc {
     [super dealloc];
 }
 
