@@ -13,19 +13,19 @@
 
 static NSString *kFlexSDKBinDirectory = @"FlexSDK/bin";
 
-@synthesize 
-	window,
-	landNameTextField,
-	fileTextField,
-	swfFile,
-	fileDropView;
+@synthesize window;
+@synthesize fileTextField, landNameTextField;
+@synthesize swfFile, fileDropView;
+
+@synthesize generateButton;
 
 -(id) executeFlexBin:(NSString*)executable withArguments:(NSArray*) arguments {
 	
 	NSTask *task;
 	task = [[NSTask alloc] init];
+		
 	task.launchPath = [[NSBundle mainBundle] pathForResource:executable ofType:nil inDirectory:kFlexSDKBinDirectory];
-	task.arguments = arguments;
+	[task setArguments: arguments];
 	
 	NSPipe *pipe = [NSPipe pipe];
 	[task setStandardOutput: pipe];
@@ -46,15 +46,23 @@ static NSString *kFlexSDKBinDirectory = @"FlexSDK/bin";
 
 -(IBAction) generate:(id)sender {
 	
-	NSString* swfDump = [self executeFlexBin:@"swfdump" withArguments:[NSArray arrayWithObject: swfFile]];
+	NSString* swfDump = [self executeFlexBin:@"swfdump" withArguments:[NSArray arrayWithObject:swfFile]];
 	
-	SWFDumpParser *swfDumpParser = [[SWFDumpParser alloc] initWithData:[swfDump dataUsingEncoding:NSUTF8StringEncoding]];
+	if (swfDump) {
+				
+		SWFDumpParser *swfDumpParser = [[SWFDumpParser alloc] initWithData:[swfDump dataUsingEncoding:NSUTF8StringEncoding]];
+		[swfDumpParser parse];
+		
+	}
 	
-	
-
+}
 
 
 /* Handle drag operations */
+
+-(void) controlTextDidChange:(NSNotification *)obj {
+	
+}
 
 -(void) swfFileUpdate {
 	
@@ -65,15 +73,16 @@ static NSString *kFlexSDKBinDirectory = @"FlexSDK/bin";
 		[fileDropView setImage:image];
 		
 		[fileTextField setStringValue:swfFile];
+		
+		[self.generateButton setEnabled: YES];
+		
 	}
 	
 }
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender {
     NSPasteboard *pboard;
-    NSDragOperation sourceDragMask;
-	
-    sourceDragMask = [sender draggingSourceOperationMask];
+    
     pboard = [sender draggingPasteboard];
 	
     if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
@@ -116,6 +125,9 @@ static NSString *kFlexSDKBinDirectory = @"FlexSDK/bin";
 	[self.window registerForDraggedTypes:[NSArray arrayWithObjects: NSFilenamesPboardType, nil]];
 	[self.fileDropView unregisterDraggedTypes];
 	[self.fileTextField unregisterDraggedTypes];
+	
+	self.fileTextField.delegate = self;
+	
 	[self.landNameTextField unregisterDraggedTypes];
 	
 }

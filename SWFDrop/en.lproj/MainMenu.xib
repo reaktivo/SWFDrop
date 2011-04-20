@@ -1413,10 +1413,9 @@
 							<string key="NSFrame">{{250, 90}, {109, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="555029337">
-								<int key="NSCellFlags">67239424</int>
+								<int key="NSCellFlags">604110336</int>
 								<int key="NSCellFlags2">134217728</int>
 								<string key="NSContents">Generate</string>
 								<reference key="NSSupport" ref="835689646"/>
@@ -1438,7 +1437,7 @@
 							<reference key="NSNextKeyView" ref="890594088"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="144389339">
-								<int key="NSCellFlags">-1268646335</int>
+								<int key="NSCellFlags">-1805517247</int>
 								<int key="NSCellFlags2">272631360</int>
 								<string key="NSContents"/>
 								<reference key="NSSupport" ref="835689646"/>
@@ -2188,6 +2187,14 @@
 						<reference key="destination" ref="890594088"/>
 					</object>
 					<int key="connectionID">551</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">generateButton</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="541589292"/>
+					</object>
+					<int key="connectionID">552</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3843,7 +3850,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">551</int>
+			<int key="maxID">552</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3935,6 +3942,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>fileDropView</string>
 							<string>fileTextField</string>
+							<string>generateButton</string>
 							<string>landNameTextField</string>
 							<string>window</string>
 						</object>
@@ -3942,6 +3950,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSImageView</string>
 							<string>NSTextField</string>
+							<string>NSButton</string>
 							<string>NSTextField</string>
 							<string>NSWindow</string>
 						</object>
@@ -3952,6 +3961,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>fileDropView</string>
 							<string>fileTextField</string>
+							<string>generateButton</string>
 							<string>landNameTextField</string>
 							<string>window</string>
 						</object>
@@ -3964,6 +3974,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">fileTextField</string>
 								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">generateButton</string>
+								<string key="candidateClassName">NSButton</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">landNameTextField</string>

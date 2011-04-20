@@ -9,8 +9,14 @@
 #import <Foundation/Foundation.h>
 
 
-@interface SWFDumpParser : NSXMLParser {
+@interface SWFDumpParser : NSXMLParser <NSXMLParserDelegate> {
 @private
+	
+	BOOL swfTagOpen;
+	
+	NSMutableArray *xmlPath;
+	
+	NSMutableArray *stageDisplayObjects;
     
 }
 

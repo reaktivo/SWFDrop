@@ -13,6 +13,8 @@
 		F8426F54135DF04E0013B810 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F8426F52135DF04E0013B810 /* Credits.rtf */; };
 		F8426F57135DF04E0013B810 /* SWFDropAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8426F56135DF04E0013B810 /* SWFDropAppDelegate.m */; };
 		F8426F5A135DF04E0013B810 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8426F58135DF04E0013B810 /* MainMenu.xib */; };
+		F8EE1554135E49F7002FBF2A /* SWFDumpParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EE1553135E49F7002FBF2A /* SWFDumpParser.m */; };
+		F8EE155A135F44BB002FBF2A /* FlexSDK in Resources */ = {isa = PBXBuildFile; fileRef = F8EE1559135F44BB002FBF2A /* FlexSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,9 @@
 		F8426F55135DF04E0013B810 /* SWFDropAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWFDropAppDelegate.h; sourceTree = "<group>"; };
 		F8426F56135DF04E0013B810 /* SWFDropAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWFDropAppDelegate.m; sourceTree = "<group>"; };
 		F8426F59135DF04E0013B810 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		F8EE1552135E49F7002FBF2A /* SWFDumpParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFDumpParser.h; sourceTree = "<group>"; };
+		F8EE1553135E49F7002FBF2A /* SWFDumpParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWFDumpParser.m; sourceTree = "<group>"; };
+		F8EE1559135F44BB002FBF2A /* FlexSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FlexSDK; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +87,12 @@
 		F8426F49135DF04E0013B810 /* SWFDrop */ = {
 			isa = PBXGroup;
 			children = (
+				F8EE1556135F447F002FBF2A /* Resources */,
 				F8426F55135DF04E0013B810 /* SWFDropAppDelegate.h */,
 				F8426F56135DF04E0013B810 /* SWFDropAppDelegate.m */,
 				F8426F58135DF04E0013B810 /* MainMenu.xib */,
+				F8EE1552135E49F7002FBF2A /* SWFDumpParser.h */,
+				F8EE1553135E49F7002FBF2A /* SWFDumpParser.m */,
 				F8426F4A135DF04E0013B810 /* Supporting Files */,
 			);
 			path = SWFDrop;
@@ -100,6 +108,14 @@
 				F8426F52135DF04E0013B810 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F8EE1556135F447F002FBF2A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F8EE1559135F44BB002FBF2A /* FlexSDK */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +168,7 @@
 				F8426F4E135DF04E0013B810 /* InfoPlist.strings in Resources */,
 				F8426F54135DF04E0013B810 /* Credits.rtf in Resources */,
 				F8426F5A135DF04E0013B810 /* MainMenu.xib in Resources */,
+				F8EE155A135F44BB002FBF2A /* FlexSDK in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +181,7 @@
 			files = (
 				F8426F51135DF04E0013B810 /* main.m in Sources */,
 				F8426F57135DF04E0013B810 /* SWFDropAppDelegate.m in Sources */,
+				F8EE1554135E49F7002FBF2A /* SWFDumpParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

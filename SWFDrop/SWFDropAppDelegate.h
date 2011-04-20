@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface SWFDropAppDelegate : NSObject <NSApplicationDelegate> {
+@interface SWFDropAppDelegate : NSObject <NSApplicationDelegate, NSTextFieldDelegate> {
 @private
 	NSWindow *window;
 }
@@ -20,5 +20,6 @@
 @property (nonatomic, retain) IBOutlet NSTextField *landNameTextField;
 @property (nonatomic, retain) IBOutlet NSTextField *fileTextField;
 @property (nonatomic, retain) IBOutlet NSImageView *fileDropView;
+@property (nonatomic, retain) IBOutlet NSButton *generateButton;
 
 @end
