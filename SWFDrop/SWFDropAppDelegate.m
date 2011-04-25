@@ -50,8 +50,8 @@ static NSString *kFlexSDKBinDirectory = @"FlexSDK/bin";
 	
 	if (swfDump) {
 				
-		SWFDumpParser *swfDumpParser = [[SWFDumpParser alloc] initWithData:[swfDump dataUsingEncoding:NSUTF8StringEncoding]];
-		[swfDumpParser parse];
+		NSArray *parsedDump = [SWFDumpParser parseSWFDumpString:swfDump];
+		NSLog(@"parsedDump: %@", parsedDump);
 		
 	}
 	
@@ -67,7 +67,7 @@ static NSString *kFlexSDKBinDirectory = @"FlexSDK/bin";
 -(void) swfFileUpdate {
 	
 	if(swfFile) {
-		NSImage *image = [[[NSWorkspace sharedWorkspace] iconForFileType:[swfFile pathExtension]] retain];
+		NSImage *image = [[NSWorkspace sharedWorkspace] iconForFileType:[swfFile pathExtension]];
 		[image setSize:NSMakeSize(128, 128)];
 				
 		[fileDropView setImage:image];
@@ -101,9 +101,6 @@ static NSString *kFlexSDKBinDirectory = @"FlexSDK/bin";
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender {
     NSPasteboard *pboard;
-    NSDragOperation sourceDragMask;
-	
-    sourceDragMask = [sender draggingSourceOperationMask];
     pboard = [sender draggingPasteboard];
 	
     if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
