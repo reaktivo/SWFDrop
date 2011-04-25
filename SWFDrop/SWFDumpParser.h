@@ -12,12 +12,15 @@
 @interface SWFDumpParser : NSXMLParser <NSXMLParserDelegate> {
 @private
 	
-	BOOL swfTagOpen;
-	
 	NSMutableArray *xmlPath;
 	
-	NSMutableArray *stageDisplayObjects;
-    
+	
 }
+
+@property (nonatomic, retain) NSMutableArray *stageDisplayObjects;
+
+
++(id) parseSWFDumpString:(NSString *) swfDumpString;
+
 
 @end
