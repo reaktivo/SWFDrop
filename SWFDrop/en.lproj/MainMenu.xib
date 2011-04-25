@@ -1325,13 +1325,13 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">4111</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{821, 416}, {373, 200}}</string>
+				<string key="NSWindowRect">{{821, 416}, {373, 122}}</string>
 				<int key="NSWTFlags">1954021376</int>
 				<string key="NSWindowTitle">SWFDrop</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
-				<string key="NSWindowContentMaxSize">{420, 200}</string>
-				<string key="NSWindowContentMinSize">{250, 200}</string>
+				<string key="NSWindowContentMaxSize">{420, 122}</string>
+				<string key="NSWindowContentMinSize">{250, 122}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
@@ -1340,7 +1340,7 @@
 						<object class="NSTextField" id="890594088">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">266</int>
-							<string key="NSFrame">{{92, 128}, {261, 21}}</string>
+							<string key="NSFrame">{{92, 50}, {261, 21}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="541589292"/>
@@ -1392,7 +1392,7 @@
 									<string>NeXT TIFF v4.0 pasteboard type</string>
 								</object>
 							</object>
-							<string key="NSFrame">{{17, 113}, {70, 70}}</string>
+							<string key="NSFrame">{{17, 35}, {70, 70}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="99177021"/>
@@ -1410,9 +1410,10 @@
 						<object class="NSButton" id="541589292">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">265</int>
-							<string key="NSFrame">{{250, 90}, {109, 32}}</string>
+							<string key="NSFrame">{{250, 12}, {109, 32}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="555029337">
 								<int key="NSCellFlags">604110336</int>
@@ -1431,7 +1432,7 @@
 						<object class="NSTextField" id="99177021">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">266</int>
-							<string key="NSFrame">{{92, 159}, {261, 21}}</string>
+							<string key="NSFrame">{{92, 81}, {261, 21}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="890594088"/>
@@ -1449,14 +1450,14 @@
 							</object>
 						</object>
 					</object>
-					<string key="NSFrame">{{7, 11}, {373, 200}}</string>
+					<string key="NSFrame">{{7, 11}, {373, 122}}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="1006552457"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
-				<string key="NSMinSize">{250, 222}</string>
-				<string key="NSMaxSize">{420, 222}</string>
+				<string key="NSMinSize">{250, 144}</string>
+				<string key="NSMaxSize">{420, 144}</string>
 			</object>
 			<object class="NSCustomObject" id="976324537">
 				<string key="NSClassName">SWFDropAppDelegate</string>
