@@ -7,11 +7,11 @@
 //
 
 #import "SWFDropAppDelegate.h"
-#import "SWFDumpParser.h"
+#import "SWFDisplayExtractor.h"
+#import "SWFTools.h"
+#import "DLog.h"
 
 @implementation SWFDropAppDelegate
-
-static NSString *kFlexSDKBinDirectory = @"FlexSDK/bin";
 
 @synthesize window;
 @synthesize fileTextField, landNameTextField;
@@ -19,41 +19,25 @@ static NSString *kFlexSDKBinDirectory = @"FlexSDK/bin";
 
 @synthesize generateButton;
 
--(id) executeFlexBin:(NSString*)executable withArguments:(NSArray*) arguments {
-	
-	NSTask *task;
-	task = [[NSTask alloc] init];
-		
-	task.launchPath = [[NSBundle mainBundle] pathForResource:executable ofType:nil inDirectory:kFlexSDKBinDirectory];
-	[task setArguments: arguments];
-	
-	NSPipe *pipe = [NSPipe pipe];
-	[task setStandardOutput: pipe];
-	[task setStandardInput:[NSPipe pipe]];
-	
-	NSFileHandle *file = [pipe fileHandleForReading];
-	
-	[task launch];
-	
-	NSData *data = [file readDataToEndOfFile];
-	
-	NSString *dataString = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-	
-	[task release];
-	
-	return [dataString autorelease];
-}
-
 -(IBAction) generate:(id)sender {
 	
-	NSString* swfDump = [self executeFlexBin:@"swfdump" withArguments:[NSArray arrayWithObject:swfFile]];
+	NSString* swfDump = [SWFTools swfDump:swfFile];
 	
+	DLog(@"swfDump: \n%@", swfDump);
+	
+	
+	/*
 	if (swfDump) {
 				
-		NSArray *parsedDump = [SWFDumpParser parseSWFDumpString:swfDump];
-		NSLog(@"parsedDump: %@", parsedDump);
+		NSArray *displayObjects = [SWFDumpParser parseSWFDumpString:swfDump];
+		
+		SWFDisplayExtractor *displayExtractor = [[SWFDisplayExtractor alloc] initWithDisplayObjects:displayObjects];
+		[displayExtractor generate];
+		[displayExtractor release];
 		
 	}
+	 */
+	
 	
 }
 

@@ -13,8 +13,12 @@
 		F8426F54135DF04E0013B810 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F8426F52135DF04E0013B810 /* Credits.rtf */; };
 		F8426F57135DF04E0013B810 /* SWFDropAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8426F56135DF04E0013B810 /* SWFDropAppDelegate.m */; };
 		F8426F5A135DF04E0013B810 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8426F58135DF04E0013B810 /* MainMenu.xib */; };
-		F8EE1554135E49F7002FBF2A /* SWFDumpParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EE1553135E49F7002FBF2A /* SWFDumpParser.m */; };
-		F8EE155A135F44BB002FBF2A /* FlexSDK in Resources */ = {isa = PBXBuildFile; fileRef = F8EE1559135F44BB002FBF2A /* FlexSDK */; };
+		F8D2953313676013004DD1A8 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D2953213676013004DD1A8 /* RegexKitLite.m */; };
+		F8D2953513676C18004DD1A8 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D2953413676C18004DD1A8 /* libicucore.dylib */; };
+		F8D295381367773F004DD1A8 /* DisplayObjectMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D295371367773F004DD1A8 /* DisplayObjectMatrix.m */; };
+		F8EA0D9113662BB50076F810 /* SWFDisplayExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EA0D9013662BB40076F810 /* SWFDisplayExtractor.m */; };
+		F8EA0D9513662C260076F810 /* SWFTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EA0D9413662C260076F810 /* SWFTools.m */; };
+		F8EA0D97136721B90076F810 /* swftools in Resources */ = {isa = PBXBuildFile; fileRef = F8EA0D96136721B90076F810 /* swftools */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +33,19 @@
 		F8426F50135DF04E0013B810 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F8426F53135DF04E0013B810 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		F8426F55135DF04E0013B810 /* SWFDropAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWFDropAppDelegate.h; sourceTree = "<group>"; };
-		F8426F56135DF04E0013B810 /* SWFDropAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWFDropAppDelegate.m; sourceTree = "<group>"; };
+		F8426F56135DF04E0013B810 /* SWFDropAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SWFDropAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F8426F59135DF04E0013B810 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		F8EE1552135E49F7002FBF2A /* SWFDumpParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFDumpParser.h; sourceTree = "<group>"; };
-		F8EE1553135E49F7002FBF2A /* SWFDumpParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWFDumpParser.m; sourceTree = "<group>"; };
-		F8EE1559135F44BB002FBF2A /* FlexSDK */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FlexSDK; sourceTree = "<group>"; };
+		F8D2952613673CE2004DD1A8 /* DLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLog.h; sourceTree = "<group>"; };
+		F8D2953113676013004DD1A8 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		F8D2953213676013004DD1A8 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		F8D2953413676C18004DD1A8 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		F8D295361367773F004DD1A8 /* DisplayObjectMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayObjectMatrix.h; sourceTree = "<group>"; };
+		F8D295371367773F004DD1A8 /* DisplayObjectMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayObjectMatrix.m; sourceTree = "<group>"; };
+		F8EA0D8F13662BB40076F810 /* SWFDisplayExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFDisplayExtractor.h; sourceTree = "<group>"; };
+		F8EA0D9013662BB40076F810 /* SWFDisplayExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SWFDisplayExtractor.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		F8EA0D9313662C260076F810 /* SWFTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SWFTools.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		F8EA0D9413662C260076F810 /* SWFTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SWFTools.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		F8EA0D96136721B90076F810 /* swftools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = swftools; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8426F44135DF04E0013B810 /* Cocoa.framework in Frameworks */,
+				F8D2953513676C18004DD1A8 /* libicucore.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +90,7 @@
 		F8426F45135DF04E0013B810 /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F8D2953413676C18004DD1A8 /* libicucore.dylib */,
 				F8426F46135DF04E0013B810 /* AppKit.framework */,
 				F8426F47135DF04E0013B810 /* CoreData.framework */,
 				F8426F48135DF04E0013B810 /* Foundation.framework */,
@@ -87,13 +101,19 @@
 		F8426F49135DF04E0013B810 /* SWFDrop */ = {
 			isa = PBXGroup;
 			children = (
+				F8D2953013676008004DD1A8 /* Other Sources */,
+				F8426F4A135DF04E0013B810 /* Supporting Files */,
 				F8EE1556135F447F002FBF2A /* Resources */,
 				F8426F55135DF04E0013B810 /* SWFDropAppDelegate.h */,
 				F8426F56135DF04E0013B810 /* SWFDropAppDelegate.m */,
 				F8426F58135DF04E0013B810 /* MainMenu.xib */,
-				F8EE1552135E49F7002FBF2A /* SWFDumpParser.h */,
-				F8EE1553135E49F7002FBF2A /* SWFDumpParser.m */,
-				F8426F4A135DF04E0013B810 /* Supporting Files */,
+				F8EA0D8F13662BB40076F810 /* SWFDisplayExtractor.h */,
+				F8EA0D9013662BB40076F810 /* SWFDisplayExtractor.m */,
+				F8EA0D9313662C260076F810 /* SWFTools.h */,
+				F8EA0D9413662C260076F810 /* SWFTools.m */,
+				F8D2952613673CE2004DD1A8 /* DLog.h */,
+				F8D295361367773F004DD1A8 /* DisplayObjectMatrix.h */,
+				F8D295371367773F004DD1A8 /* DisplayObjectMatrix.m */,
 			);
 			path = SWFDrop;
 			sourceTree = "<group>";
@@ -110,10 +130,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F8D2953013676008004DD1A8 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F8D2953113676013004DD1A8 /* RegexKitLite.h */,
+				F8D2953213676013004DD1A8 /* RegexKitLite.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
 		F8EE1556135F447F002FBF2A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F8EE1559135F44BB002FBF2A /* FlexSDK */,
+				F8EA0D96136721B90076F810 /* swftools */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -168,7 +197,7 @@
 				F8426F4E135DF04E0013B810 /* InfoPlist.strings in Resources */,
 				F8426F54135DF04E0013B810 /* Credits.rtf in Resources */,
 				F8426F5A135DF04E0013B810 /* MainMenu.xib in Resources */,
-				F8EE155A135F44BB002FBF2A /* FlexSDK in Resources */,
+				F8EA0D97136721B90076F810 /* swftools in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +210,10 @@
 			files = (
 				F8426F51135DF04E0013B810 /* main.m in Sources */,
 				F8426F57135DF04E0013B810 /* SWFDropAppDelegate.m in Sources */,
-				F8EE1554135E49F7002FBF2A /* SWFDumpParser.m in Sources */,
+				F8EA0D9113662BB50076F810 /* SWFDisplayExtractor.m in Sources */,
+				F8EA0D9513662C260076F810 /* SWFTools.m in Sources */,
+				F8D2953313676013004DD1A8 /* RegexKitLite.m in Sources */,
+				F8D295381367773F004DD1A8 /* DisplayObjectMatrix.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +283,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -267,6 +304,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_DIR)/Local/Frameworks\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SWFDrop/SWFDrop-Prefix.pch";
