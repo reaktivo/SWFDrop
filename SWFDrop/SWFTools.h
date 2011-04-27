@@ -16,5 +16,6 @@
 
 +(id) execute:(NSString*)executable withArguments:(NSArray*) arguments;
 +(id) swfDump:(NSString *) swfFile;
++(BOOL) exportDisplayObjects: (NSArray *) displayObjects fromSWF: (NSString*) swfFile toDirectory:(NSString*) directory;
 
 @end

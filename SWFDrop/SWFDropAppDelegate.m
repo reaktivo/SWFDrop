@@ -7,36 +7,43 @@
 //
 
 #import "SWFDropAppDelegate.h"
-#import "SWFDisplayExtractor.h"
 #import "SWFTools.h"
+#import "LandCVS.h"
 #import "DLog.h"
 
 @implementation SWFDropAppDelegate
 
 @synthesize window;
-@synthesize fileTextField, landNameTextField;
+@synthesize fileTextField;
 @synthesize swfFile, fileDropView;
-
-@synthesize generateButton;
 
 -(IBAction) generate:(id)sender {
 	
-	NSString* swfDump = [SWFTools swfDump:swfFile];
+	NSArray* swfDump = [SWFTools swfDump:swfFile];
 	
-	DLog(@"swfDump: \n%@", swfDump);
-	
-	
-	/*
-	if (swfDump) {
-				
-		NSArray *displayObjects = [SWFDumpParser parseSWFDumpString:swfDump];
+	if (swfDump && [swfDump count] > 0) {
+					
+		NSString *dirPath = [swfFile stringByDeletingPathExtension];
+		NSString *landName = [dirPath lastPathComponent];
 		
-		SWFDisplayExtractor *displayExtractor = [[SWFDisplayExtractor alloc] initWithDisplayObjects:displayObjects];
-		[displayExtractor generate];
-		[displayExtractor release];
+		NSFileManager *fileManager= [NSFileManager defaultManager];
+		if(![fileManager fileExistsAtPath:dirPath isDirectory:NULL])
+			if(![fileManager createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:NULL])
+				NSLog(@"Error: Create directory failed %@", dirPath);
+		
+		[SWFTools exportDisplayObjects:swfDump fromSWF:swfFile toDirectory:dirPath];
+		[LandCVS exportLand:landName withDisplayObjects:swfDump toDirectory:dirPath];
+		
+		NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+		[alert addButtonWithTitle:@"OK"];
+		[alert setMessageText:@"Finished"];
+		[alert setInformativeText:@"Land has been generated successfully."];
+		[alert setAlertStyle:NSWarningAlertStyle];
+		
+		[alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
 		
 	}
-	 */
+	
 	
 	
 }
@@ -58,7 +65,6 @@
 		
 		[fileTextField setStringValue:swfFile];
 		
-		[self.generateButton setEnabled: YES];
 		
 	}
 	
@@ -95,6 +101,7 @@
 		self.swfFile = filename;
 		
 		[self swfFileUpdate];
+		[self generate:nil];
 			
     }
     return YES;
@@ -108,8 +115,6 @@
 	[self.fileTextField unregisterDraggedTypes];
 	
 	self.fileTextField.delegate = self;
-	
-	[self.landNameTextField unregisterDraggedTypes];
 	
 }
 

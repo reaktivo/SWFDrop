@@ -10,12 +10,14 @@
 #import "DLog.h"
 #import "RegexKitLite.h"
 
+#import "DisplayObject.h"
 
-#import "DisplayObjectMatrix.h"
-
-static NSString *kSWFToolsPath = @"swftools/bin";
 
 @implementation SWFTools
+
+
+static NSString *kSWFToolsPath = @"swftools/bin";
+static NSString *kStructuresPath = @"structures";
 
 - (id)init
 {
@@ -60,11 +62,9 @@ static NSString *kSWFToolsPath = @"swftools/bin";
 	static NSString *swfDumpLineRegExp = @"[0-9]+ PLACEOBJECT2 places id ([0-9]+) at depth ([0-9]+) name \\\"(.+)\\\"";
 	static NSString *matrixLineRegExp = @"-?[0-9]+\\.[0-9]+";
 	
-	//NSMutableArray *displayObjects = [NSMutableArray new];
+	NSMutableArray *displayObjects = [NSMutableArray new];
 	
 	NSArray *swfDumpLines = [swfDump componentsSeparatedByRegex:lineStartRegExp];
-	
-	DLog(@"%@", swfDumpLines);
 	
 	NSUInteger swfDumpLinesCount = [swfDumpLines count];
 	for (NSUInteger lineNum = 0; lineNum < swfDumpLinesCount; lineNum++) {
@@ -72,29 +72,29 @@ static NSString *kSWFToolsPath = @"swftools/bin";
 		NSString *line = [swfDumpLines objectAtIndex:lineNum];
 		
 		if ([line isMatchedByRegex:swfDumpLineRegExp]) {
-			NSArray *components = [line arrayOfCaptureComponentsMatchedByRegex:swfDumpLineRegExp];
-			DLog(@"components: %@", components);
+			
+			DisplayObject *displayObject = [DisplayObject new];
+			
+			NSArray *components = [[line arrayOfCaptureComponentsMatchedByRegex:swfDumpLineRegExp] objectAtIndex:0];
+			
+			displayObject.name = [components objectAtIndex:3];
+			displayObject.id = [[components objectAtIndex:1] integerValue];
+			displayObject.depth = [[components objectAtIndex:2] integerValue];
 			
 			NSArray *matrixArray = [line componentsMatchedByRegex:matrixLineRegExp];
 			
-			DisplayObjectMatrix *matrix = [DisplayObjectMatrix new];
-			matrix.scale = CGPointMake([[matrixArray objectAtIndex:0] floatValue], [[matrixArray objectAtIndex:4] floatValue]);
-			matrix.skew = CGPointMake([[matrixArray objectAtIndex:1] floatValue], [[matrixArray objectAtIndex:3] floatValue]);
-			matrix.position = CGPointMake([[matrixArray objectAtIndex:2] floatValue], [[matrixArray objectAtIndex:5] floatValue]);
+			displayObject.scale = CGPointMake([[matrixArray objectAtIndex:0] floatValue], [[matrixArray objectAtIndex:4] floatValue]);
+			displayObject.skew = CGPointMake([[matrixArray objectAtIndex:1] floatValue], [[matrixArray objectAtIndex:3] floatValue]);
+			displayObject.position = CGPointMake([[matrixArray objectAtIndex:2] floatValue], [[matrixArray objectAtIndex:5] floatValue]);
 			
-			
-			//NSArray *matrixLine1Components = [matrixLine1 componentsMatchedByRegex:matrixLineRegExp]; 
-			//DLog(@"matrix: %@", matrixLine1Components);
-			
-			//DisplayObjectMatrix *matrix = [DisplayObjectMatrix new];
-			
+			[displayObjects addObject:displayObject];
 			
 		}
 		
 	}
 	
 	
-	return swfDumpLines;
+	return displayObjects;
 	
 	
 }
@@ -115,6 +115,26 @@ static NSString *kSWFToolsPath = @"swftools/bin";
 }
 
 
++(BOOL) exportDisplayObjects: (NSArray *) displayObjects fromSWF: (NSString*) swfFile toDirectory:(NSString*) directory {
+	
+	NSString *structuresDir = [directory stringByAppendingPathComponent:kStructuresPath];
+	
+	NSFileManager *fileManager= [NSFileManager defaultManager];
+	if(![fileManager fileExistsAtPath:structuresDir isDirectory:NULL])
+		if(![fileManager createDirectoryAtPath:structuresDir withIntermediateDirectories:YES attributes:nil error:NULL])
+			NSLog(@"Error: Create directory failed %@", structuresDir);
+	
+	for (DisplayObject *displayObject in displayObjects) {
+				
+		NSString *displayObjectTargetFile = [[structuresDir stringByAppendingPathComponent:displayObject.name] stringByAppendingPathExtension:@"swf"];
+		NSArray *arguments = [NSArray arrayWithObjects:@"-n", displayObject.name, @"-o", displayObjectTargetFile, swfFile, nil];
+		[SWFTools execute:@"swfextract" withArguments:arguments];
+		
+	}
+	
+	return YES;
+	
+}
 
 
 
