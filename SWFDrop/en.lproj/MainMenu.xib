@@ -1414,6 +1414,7 @@
 				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
 				<string key="NSMinSize">{212, 262}</string>
 				<string key="NSMaxSize">{480, 342}</string>
+				<string key="NSFrameAutosaveName">com.reaktivo.SWFDrop.mainwindow</string>
 			</object>
 			<object class="NSCustomObject" id="976324537">
 				<string key="NSClassName">SWFDropAppDelegate</string>
@@ -3745,7 +3746,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">552</int>
+			<int key="maxID">553</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
