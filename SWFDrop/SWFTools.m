@@ -15,8 +15,10 @@
 
 @implementation SWFTools
 
+static NSString *kSWFToolsInstallCommand = @"curl -L http://goo.gl/5cToM | sh";
+static NSString *kSWFToolsPath = @"/usr/local/bin";
+static NSString *kSWFToolsExistancePath = @"/usr/local/share/swftools";
 
-static NSString *kSWFToolsPath = @"swftools/bin";
 static NSString *kStructuresPath = @"structures";
 
 - (id)init
@@ -34,14 +36,37 @@ static NSString *kStructuresPath = @"structures";
     [super dealloc];
 }
 
++(BOOL) isSWFToolsInstall {
+	
+	//If SWFTools is not installed, ask to install or exit
+	
+	if ([[NSFileManager defaultManager] fileExistsAtPath:kSWFToolsExistancePath isDirectory:nil] == NO) {
+		
+		NSAlert *alert = [NSAlert alertWithMessageText:@"SWFTools is not installed" defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@"SWFTools is not installed, to install copy, paste and run the following script as sudo:\n\n%@", kSWFToolsInstallCommand];
+		
+		[alert beginSheetModalForWindow:[[NSApp orderedWindows] objectAtIndex:0] modalDelegate:nil didEndSelector:nil contextInfo:nil];
+		
+		return NO;
+		
+	}else{
+		return YES;
+	}
+	
+	
+}
+
 
 +(id) execute:(NSString*)executable withArguments:(NSArray*) arguments {
 	
-	DLog(@"%@", executable);
+	DLog(@"%@, %@", executable, arguments);
+	
+	if (![self isSWFToolsInstall]) {
+		return nil;
+	}
 	
 	NSTask *task = [[NSTask alloc] init];
 	
-	task.launchPath = [[NSBundle mainBundle] pathForResource:executable ofType:nil inDirectory:kSWFToolsPath];
+	task.launchPath = [kSWFToolsPath stringByAppendingPathComponent:executable];
 
 	[task setArguments: arguments];
 	NSPipe *pipe = [NSPipe pipe];
@@ -139,9 +164,11 @@ static NSString *kStructuresPath = @"structures";
 	NSString *structuresDir = [directory stringByAppendingPathComponent:kStructuresPath];
 	
 	NSFileManager *fileManager= [NSFileManager defaultManager];
-	if(![fileManager fileExistsAtPath:structuresDir isDirectory:NULL])
-		if(![fileManager createDirectoryAtPath:structuresDir withIntermediateDirectories:YES attributes:nil error:NULL])
-			DLog(@"Error: Create directory failed %@", structuresDir);
+	if(![fileManager fileExistsAtPath:structuresDir isDirectory:NULL] && 
+	   ![fileManager createDirectoryAtPath:structuresDir withIntermediateDirectories:YES attributes:nil error:NULL]) {
+		DLog(@"Error: Create directory failed %@", structuresDir);
+	}
+			
 	
 	for (DisplayObject *displayObject in displayObjects) {
 				
