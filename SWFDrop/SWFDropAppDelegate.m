@@ -17,6 +17,21 @@
 @synthesize fileTextField;
 @synthesize swfFile, fileDropView;
 
+
+
+- (void) alertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(id)dirPath {
+	
+	[[NSWorkspace sharedWorkspace] selectFile:dirPath inFileViewerRootedAtPath:@""];
+	
+	//NSURL *folderURL = [NSURL URLWithString: dirPath];
+	//[[NSWorkspace sharedWorkspace] openURL: folderURL];
+	
+	//NSLog(@"folderURL: %@", folderURL);
+	[dirPath release];
+	
+}
+
+
 -(IBAction) generate:(id)sender {
 	
 	NSArray* swfDump = [SWFTools swfDump:swfFile];
@@ -27,27 +42,24 @@
 		NSString *landName = [dirPath lastPathComponent];
 		
 		NSFileManager *fileManager= [NSFileManager defaultManager];
-		if(![fileManager fileExistsAtPath:dirPath isDirectory:NULL])
-			if(![fileManager createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:NULL])
-				DLog(@"Error: Create directory failed %@", dirPath);
-		
+		if(![fileManager fileExistsAtPath:dirPath isDirectory:NULL] && 
+		   ![fileManager createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:NULL]) {
+			DLog(@"Error: Create directory failed %@", dirPath);
+		}
+				
 		[SWFTools exportDisplayObjects:swfDump fromSWF:swfFile toDirectory:dirPath];
 		[LandCVS exportLand:landName withDisplayObjects:swfDump toDirectory:dirPath];
 		
-		NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-		[alert addButtonWithTitle:@"OK"];
-		[alert setMessageText:@"Finished"];
-		[alert setInformativeText:@"Land has been generated successfully."];
-		[alert setAlertStyle:NSWarningAlertStyle];
 		
-		[alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+		NSAlert *alert = [NSAlert alertWithMessageText:@"Finished" defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@"Land has been generated successfully."];
+		
+		[alert beginSheetModalForWindow:[[NSApp orderedWindows] objectAtIndex:0] modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:[dirPath retain]];
 		
 	}
 	
 	
 	
 }
-
 
 /* Handle drag operations */
 
