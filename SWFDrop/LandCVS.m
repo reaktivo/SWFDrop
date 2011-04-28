@@ -67,6 +67,7 @@
 	
 	[[csvLines componentsJoinedByString:@"\n"] writeToFile:landFilename atomically:YES encoding:NSUTF8StringEncoding error:NULL];
 	
+	[csvLines release];
 	
 	return YES;
 }
