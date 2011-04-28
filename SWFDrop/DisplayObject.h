@@ -11,7 +11,13 @@
 
 @interface DisplayObject : NSObject {
 @private
-    
+    NSString *name;
+	NSUInteger id;
+	NSUInteger depth;
+	
+	CGPoint scale;
+	CGPoint skew;
+	CGPoint position;
 }
 
 

@@ -11,6 +11,9 @@
 @interface SWFDropAppDelegate : NSObject <NSApplicationDelegate, NSTextFieldDelegate> {
 @private
 	NSWindow *window;
+	NSString *swfFile;
+	NSTextField *fileTextField;
+	NSImageView *fileDropView;
 }
 
 -(IBAction) generate:(id)sender;

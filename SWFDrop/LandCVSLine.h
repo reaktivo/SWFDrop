@@ -18,7 +18,21 @@ extern const NSString *kStructureType;
 
 @interface LandCVSLine : NSObject {
 @private
-    
+    NSString *land;
+	NSString *file;
+	NSString *type;
+	NSString *scaleX;
+	NSString *scaleY;
+	NSString *x;
+	NSString *y;
+	NSString *order;
+	NSString *willCollide;
+	NSString *link;
+	NSString *isPortal;
+	NSString *destination;
+	NSString *reference;
+	NSString *remove;
+	NSString *defaultLand;
 }
 
 
