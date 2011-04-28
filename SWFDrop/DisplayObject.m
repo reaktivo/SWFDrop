@@ -26,10 +26,9 @@
 
 -(NSString *) description {
 		
-	return [NSString stringWithFormat:@"%@ name: %@ position: %@", 
+	return [NSString stringWithFormat:@"%@ name: %@", 
 				[super description],
-				self.name,
-				NSStringFromPoint(self.position)]; 
+				self.name]; 
 	
 }
 
