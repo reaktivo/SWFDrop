@@ -19,7 +19,6 @@
 		F8D295381367773F004DD1A8 /* DisplayObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D295371367773F004DD1A8 /* DisplayObject.m */; };
 		F8D2953B13689EB1004DD1A8 /* LandCVS.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D2953A13689EB0004DD1A8 /* LandCVS.m */; };
 		F8EA0D9513662C260076F810 /* SWFTools.m in Sources */ = {isa = PBXBuildFile; fileRef = F8EA0D9413662C260076F810 /* SWFTools.m */; };
-		F8EA0D97136721B90076F810 /* swftools in Resources */ = {isa = PBXBuildFile; fileRef = F8EA0D96136721B90076F810 /* swftools */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +47,6 @@
 		F8D2953A13689EB0004DD1A8 /* LandCVS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandCVS.m; sourceTree = "<group>"; };
 		F8EA0D9313662C260076F810 /* SWFTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SWFTools.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F8EA0D9413662C260076F810 /* SWFTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SWFTools.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		F8EA0D96136721B90076F810 /* swftools */ = {isa = PBXFileReference; lastKnownFileType = folder; path = swftools; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +104,6 @@
 			children = (
 				F8D2953013676008004DD1A8 /* Other Sources */,
 				F8426F4A135DF04E0013B810 /* Supporting Files */,
-				F8EE1556135F447F002FBF2A /* Resources */,
 				F8426F55135DF04E0013B810 /* SWFDropAppDelegate.h */,
 				F8426F56135DF04E0013B810 /* SWFDropAppDelegate.m */,
 				F8D295361367773F004DD1A8 /* DisplayObject.h */,
@@ -142,14 +139,6 @@
 				F8D2953213676013004DD1A8 /* RegexKitLite.m */,
 			);
 			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		F8EE1556135F447F002FBF2A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F8EA0D96136721B90076F810 /* swftools */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +191,6 @@
 				F8426F4E135DF04E0013B810 /* InfoPlist.strings in Resources */,
 				F8426F54135DF04E0013B810 /* Credits.rtf in Resources */,
 				F8426F5A135DF04E0013B810 /* MainMenu.xib in Resources */,
-				F8EA0D97136721B90076F810 /* swftools in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
