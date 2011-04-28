@@ -29,7 +29,7 @@
 		NSFileManager *fileManager= [NSFileManager defaultManager];
 		if(![fileManager fileExistsAtPath:dirPath isDirectory:NULL])
 			if(![fileManager createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:NULL])
-				NSLog(@"Error: Create directory failed %@", dirPath);
+				DLog(@"Error: Create directory failed %@", dirPath);
 		
 		[SWFTools exportDisplayObjects:swfDump fromSWF:swfFile toDirectory:dirPath];
 		[LandCVS exportLand:landName withDisplayObjects:swfDump toDirectory:dirPath];

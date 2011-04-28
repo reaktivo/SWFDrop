@@ -37,6 +37,8 @@ static NSString *kStructuresPath = @"structures";
 
 +(id) execute:(NSString*)executable withArguments:(NSArray*) arguments {
 	
+	DLog(@"%@", executable);
+	
 	NSTask *task = [[NSTask alloc] init];
 	
 	task.launchPath = [[NSBundle mainBundle] pathForResource:executable ofType:nil inDirectory:kSWFToolsPath];
@@ -58,15 +60,20 @@ static NSString *kStructuresPath = @"structures";
 
 +(id) parseSwfDump:(NSString*) swfDump {
 	
+	DLog(@"start");
+	
 	static NSString *lineStartRegExp = @"\\[[a-zA-Z0-9]+\\]\\s+";
 	static NSString *swfDumpLineRegExp = @"[0-9]+ PLACEOBJECT2 places id ([0-9]+) at depth ([0-9]+) name \\\"(.+)\\\"";
 	static NSString *matrixLineRegExp = @"-?[0-9]+\\.[0-9]+";
 	
-	NSMutableArray *displayObjects = [NSMutableArray new];
+	NSMutableArray *displayObjects = [[NSMutableArray new] autorelease];
 	
 	NSArray *swfDumpLines = [swfDump componentsSeparatedByRegex:lineStartRegExp];
 	
 	NSUInteger swfDumpLinesCount = [swfDumpLines count];
+	
+	DLog(@"swfDumpLinesCount: %i", (int) swfDumpLinesCount);
+	
 	for (NSUInteger lineNum = 0; lineNum < swfDumpLinesCount; lineNum++) {
 		
 		NSString *line = [swfDumpLines objectAtIndex:lineNum];
@@ -89,6 +96,10 @@ static NSString *kStructuresPath = @"structures";
 			
 			[displayObjects addObject:displayObject];
 			
+			DLog(@"displayObject created: %@", displayObject);
+			
+			[displayObject release];
+			
 		}
 		
 	}
@@ -102,13 +113,19 @@ static NSString *kStructuresPath = @"structures";
 
 +(id) swfDump:(NSString *) swfFile{
 	
+	DLog(@"start");
+	
 	NSString* swfDump = [SWFTools execute:@"swfdump" withArguments:[NSArray arrayWithObjects: @"-p", swfFile, nil]];
 	
 	if (swfDump) {
 		
+		DLog(@"success");
+		
 		return [SWFTools parseSwfDump: swfDump];
 				
 	}
+	
+	DLog(@"fail");
 	
 	return nil;
 	
@@ -117,12 +134,14 @@ static NSString *kStructuresPath = @"structures";
 
 +(BOOL) exportDisplayObjects: (NSArray *) displayObjects fromSWF: (NSString*) swfFile toDirectory:(NSString*) directory {
 	
+	DLog(@"start");
+	
 	NSString *structuresDir = [directory stringByAppendingPathComponent:kStructuresPath];
 	
 	NSFileManager *fileManager= [NSFileManager defaultManager];
 	if(![fileManager fileExistsAtPath:structuresDir isDirectory:NULL])
 		if(![fileManager createDirectoryAtPath:structuresDir withIntermediateDirectories:YES attributes:nil error:NULL])
-			NSLog(@"Error: Create directory failed %@", structuresDir);
+			DLog(@"Error: Create directory failed %@", structuresDir);
 	
 	for (DisplayObject *displayObject in displayObjects) {
 				
