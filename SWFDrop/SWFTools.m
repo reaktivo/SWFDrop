@@ -15,9 +15,10 @@
 
 @implementation SWFTools
 
+
+static NSArray *kSWFToolsPaths;
+
 static NSString *kSWFToolsInstallCommand = @"curl -L http://goo.gl/5cToM | sh";
-static NSString *kSWFToolsPath = @"/usr/local/bin";
-static NSString *kSWFToolsExistancePath = @"/usr/local/share/swftools";
 
 static NSString *kStructuresPath = @"structures";
 
@@ -36,21 +37,32 @@ static NSString *kStructuresPath = @"structures";
     [super dealloc];
 }
 
-+(BOOL) isSWFToolsInstall {
++ (NSString *)binLocation:(NSString*) executable {
+	
+	if (kSWFToolsPaths == nil) {
+		kSWFToolsPaths = [[NSArray alloc] initWithObjects:@"/usr/local/bin", @"/opt/local/bin", nil];
+	}
+	
+	for (NSString* path in kSWFToolsPaths) {
+		
+		NSString *binPath = [path stringByAppendingPathComponent:executable];
+		if ([[NSFileManager defaultManager] fileExistsAtPath:binPath isDirectory:nil]) {
+			return binPath;
+		}
+		
+	}
+	
+	return nil;
+	
+}
+
++(void) promptForInstall {
 	
 	//If SWFTools is not installed, ask to install or exit
 	
-	if ([[NSFileManager defaultManager] fileExistsAtPath:kSWFToolsExistancePath isDirectory:nil] == NO) {
-		
-		NSAlert *alert = [NSAlert alertWithMessageText:@"SWFTools is not installed" defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@"SWFTools is not installed, to install copy, paste and run the following script as sudo:\n\n%@", kSWFToolsInstallCommand];
-		
-		[alert beginSheetModalForWindow:[[NSApp orderedWindows] objectAtIndex:0] modalDelegate:nil didEndSelector:nil contextInfo:nil];
-		
-		return NO;
-		
-	}else{
-		return YES;
-	}
+	NSAlert *alert = [NSAlert alertWithMessageText:@"SWFTools is not installed" defaultButton:nil alternateButton:nil otherButton:nil informativeTextWithFormat:@"SWFTools is not installed, to install copy, paste and run the following script as sudo:\n\n%@", kSWFToolsInstallCommand];
+	
+	[alert beginSheetModalForWindow:[[NSApp orderedWindows] objectAtIndex:0] modalDelegate:nil didEndSelector:nil contextInfo:nil];
 	
 	
 }
@@ -60,13 +72,16 @@ static NSString *kStructuresPath = @"structures";
 	
 	DLog(@"%@, %@", executable, arguments);
 	
-	if (![self isSWFToolsInstall]) {
+	NSString *launchPath = [self binLocation:executable];
+	
+	if (!launchPath) {
+		[self promptForInstall];
 		return nil;
 	}
 	
 	NSTask *task = [[NSTask alloc] init];
 	
-	task.launchPath = [kSWFToolsPath stringByAppendingPathComponent:executable];
+	task.launchPath = launchPath;
 
 	[task setArguments: arguments];
 	NSPipe *pipe = [NSPipe pipe];
